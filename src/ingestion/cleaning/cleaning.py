@@ -56,7 +56,7 @@ if __name__ == "__main__":
     # For each row in column (x) apply the function lambda.
     data['Duration'] = data['Duration'].apply(duration_modifier)
     data['Duration_Hour'] = data['Duration'].apply(lambda duration: int(duration.split(' ')[0][0:-1]))
-    data['Duration_Minutes'] = data['Duration'].apply(lambda duration: int(duration.split(' ')[1][0:-1]))
+    data['Duration_Minute'] = data['Duration'].apply(lambda duration: int(duration.split(' ')[1][0:-1]))
     data = data.drop(columns=['Duration'])
 
     data.to_csv('data/cleaned_data/cleaned_data.csv', index=False)

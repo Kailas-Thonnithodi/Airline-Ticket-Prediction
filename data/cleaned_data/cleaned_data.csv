@@ -1,4 +1,4 @@
-Airline,Source,Destination,Route,Total_Stops,Additional_Info,Price,Date_of_Journey_Day,Date_of_Journey_Month,Date_of_Journey_Year,Dep_Time_Hour,Dep_Time_Minute,Arrival_Time_Hour,Arrival_Time_Minute,Duration_Hour,Duration_Minutes
+Airline,Source,Destination,Route,Total_Stops,Additional_Info,Price,Date_of_Journey_Day,Date_of_Journey_Month,Date_of_Journey_Year,Dep_Time_Hour,Dep_Time_Minute,Arrival_Time_Hour,Arrival_Time_Minute,Duration_Hour,Duration_Minute
 IndiGo,Banglore,New Delhi,BLR → DEL,non-stop,No info,3897,24,3,2019,22,20,1,10,2,50
 Air India,Kolkata,Banglore,CCU → IXR → BBI → BLR,2 stops,No info,7662,1,5,2019,5,50,13,15,7,25
 Jet Airways,Delhi,Cochin,DEL → LKO → BOM → COK,2 stops,No info,13882,9,6,2019,9,25,4,25,19,0
