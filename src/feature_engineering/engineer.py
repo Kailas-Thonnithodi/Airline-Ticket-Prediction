@@ -29,3 +29,10 @@ if __name__ == "__main__":
 
     # Applying label encoding on the following column
     label_encoding(data, 'Total_Stops')
+    label_encoding(data, 'Additional_Info')
+
+    # Dropping column due to too many unique values
+    data.drop(columns=["Route"], axis=1, inplace=True)
+
+    data.to_csv('data/cleaned_data/feature_engineered_data.csv', index=False)
+    print("Generated a CSV File in cleaned_data folder!")

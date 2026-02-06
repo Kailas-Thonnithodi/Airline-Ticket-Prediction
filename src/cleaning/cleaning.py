@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     # Loading Data
     filterwarnings("ignore")
-    raw_data = "data/raw_data/raw_data.xlsx"
+    raw_data = "data/raw/raw_data.xlsx"
     data = pd.read_excel(raw_data)
 
     # Data Cleaning and Preprocessing
@@ -59,5 +59,5 @@ if __name__ == "__main__":
     data['Duration_Minute'] = data['Duration'].apply(lambda duration: int(duration.split(' ')[1][0:-1]))
     data = data.drop(columns=['Duration'])
 
-    data.to_csv('data/cleaned_data/cleaned_data.csv', index=False)
-    print("Generated a CSV File in cleaned_data folder!")
+    data.to_csv('data/modified/cleaned_data.csv', index=False)
+    print("Generated a CSV File in modified folder!")
