@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import statistics
 from warnings import filterwarnings
 
 def target_guided_encoding(data: pd.DataFrame, column: str): 
@@ -16,8 +17,8 @@ if __name__ == "__main__":
 
     # Loading Data
     filterwarnings("ignore")
-    raw_data = "data/raw_data/raw_data.xlsx"
-    data = pd.read_excel(raw_data)
+    cleaned_data = "data/modified/cleaned_data.csv"
+    data = pd.read_csv(cleaned_data)
 
     # Changing New-Delhi instances to Delhi
     data['Destination'].replace('New Delhi','Delhi',inplace=True)
@@ -34,5 +35,13 @@ if __name__ == "__main__":
     # Dropping column due to too many unique values
     data.drop(columns=["Route"], axis=1, inplace=True)
 
-    data.to_csv('data/cleaned_data/feature_engineered_data.csv', index=False)
-    print("Generated a CSV File in cleaned_data folder!")
+    # applying boxplot iqr on outliers in price
+    quantile1 = data['Price'].quantile(0.25)
+    quantile3 = data['Price'].quantile(0.75)
+    interquartile_range = quantile3 - quantile1
+
+    # This will indicate all data in the outlier range (check out IQR or boxplot)
+    data['Price'] = np.where(data['Price'] >= data['Price'].median(), data['Price'].median(), data['Price'])
+
+    data.to_csv('data/modified/feature_engineered_data.csv', index=False)
+    print("Generated a CSV File in modified folder!")
