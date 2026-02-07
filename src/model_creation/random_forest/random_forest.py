@@ -21,6 +21,6 @@ if __name__ == "__main__":
     rfr = RandomForestRegressor()
     rfr.fit(X_train, y_train)
     
-    # Storing Model
+    # Storing Model (saves the parameters for the model and can be called again using pickle.load())
     model_dir = open('src/models/rfr_model.pkl', 'wb')
     pickle.dump(rfr, model_dir)
