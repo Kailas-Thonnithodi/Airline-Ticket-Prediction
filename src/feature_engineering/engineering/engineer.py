@@ -41,7 +41,7 @@ if __name__ == "__main__":
     interquartile_range = quantile3 - quantile1
 
     # This will indicate all data in the outlier range (check out IQR or boxplot)
-    data['Price'] = np.where(data['Price'] >= data['Price'].median(), data['Price'].median(), data['Price'])
+    data['Price'] = np.where(data['Price'] >= 35000, data['Price'].median(), data['Price'])
 
     data.to_csv('data/modified/feature_engineered_data.csv', index=False)
     print("Generated a CSV File in modified folder!")
