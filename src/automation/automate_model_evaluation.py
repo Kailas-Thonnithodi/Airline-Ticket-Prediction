@@ -14,7 +14,6 @@ def feature_target_extraction(data: pd.DataFrame, target):
 
 def model_summary(model, X_train, X_test, y_train, y_test):
 
-
     # Model Fitting
     model = model.fit(X_train, y_train)
     print(f'\n{type(model).__name__}')
